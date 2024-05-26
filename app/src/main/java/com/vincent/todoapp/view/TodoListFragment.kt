@@ -17,7 +17,7 @@ class TodoListFragment : Fragment() {
 
     private lateinit var bind: FragmentTodoListBinding
     private lateinit var viewModel: ListTodoViewModel
-    private val adapter = TodoListAdapter(arrayListOf(), {item-> viewModel.clearTask(item)})
+    private val adapter = TodoListAdapter(arrayListOf()) { item -> viewModel.checkTodo(item) }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

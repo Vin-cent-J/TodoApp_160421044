@@ -38,4 +38,11 @@ class ListTodoViewModel(application: Application): AndroidViewModel(application)
             todoLD.postValue(db.todoDao().selectAll())
         }
     }
+
+    fun checkTodo(todo: Todo){
+        launch {
+            val db = buildDB(getApplication())
+            db.todoDao().isDone(1, todo.uuid)
+        }
+    }
 }
