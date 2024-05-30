@@ -27,6 +27,7 @@ class TodoListAdapter(val todoList: ArrayList<Todo>, val adapterOnClick:(Todo)->
         holder.bind.todo = todoList[position]
         holder.bind.listener = this
         holder.bind.editListener = this
+        holder.bind.checkTask.isChecked = false
         if (todoList[position].is_done > 0){
             holder.bind.checkTask.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG;
         }
